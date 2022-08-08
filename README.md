@@ -10,9 +10,9 @@
 
 H2-console訪問路徑：http://localhost:8080/h2-console
 
+<br>
 
-
-程式啟動時，會自動執行以下SQL：
+#### 程式啟動時，會自動執行以下SQL：
 
 CREATE TABLE currency
 
