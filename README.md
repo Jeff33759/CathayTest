@@ -1,7 +1,15 @@
 # CathayTest
 
-考試題目。
+國泰世華考試題目。
 
+<br><br>
+## 環境、版本
+
+開發與運行環境: JDK-8
+
+SpringBoot版本: 2.7.2
+
+<br><br>
 ## DEMO說明
 
 預設RUN在8080 Port。
@@ -9,6 +17,8 @@
 為了方便DEMO，把資料存放於記憶體，因此測試端不需要自己新建任何表，直接啟動就能用，缺點就是關掉APP，資料會歸零。
 
 H2-console訪問路徑：http://localhost:8080/h2-console
+
+JDBC URL為 : jdbc:h2:mem:cathay
 
 <br>
 
@@ -33,7 +43,6 @@ INSERT INTO currency (code, chn_name) VALUES
   ('GBP','英鎊'),
 	
   ('USD','美元');
-
 
 
 <br><br>
