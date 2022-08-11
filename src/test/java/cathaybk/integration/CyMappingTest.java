@@ -32,6 +32,7 @@ public class CyMappingTest extends BaseTest{
 		.andExpect(jsonPath("$.cyMapArr[2].code").value("USD"))
 		.andExpect(jsonPath("$.cyMapArr[2].chn_name").value("美元"))
 		.andDo(print());
+		printCyMapping();
 	}
 	
 	/**

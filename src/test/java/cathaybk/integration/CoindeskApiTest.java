@@ -68,8 +68,4 @@ public class CoindeskApiTest extends BaseTest{
 		.andDo(print());
 	}
 
-	
-	
-
-
 }

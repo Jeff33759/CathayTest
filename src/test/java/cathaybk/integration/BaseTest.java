@@ -1,6 +1,7 @@
 package cathaybk.integration;
 
 import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -31,6 +32,9 @@ public class BaseTest {
     @Autowired
     protected ObjectMapper objectMapper;
     
+    @Autowired
+    protected Map<String,String> cyNameMap;
+    
 
     protected HttpHeaders mockHttpHeaders;
 	
@@ -50,26 +54,27 @@ public class BaseTest {
 	@AfterEach
 	protected void postprocessingForEachTestCase() {
 		cyRepo.truncateTable();
+		cyNameMap.clear();
     }
 	
 
 	protected void addDataIntoDBForDemo() {
 		MyCurrency cy1 = new MyCurrency();
-		cy1.setId(1);
 		cy1.setCode("EUR");
 		cy1.setChn_name("歐元");
 		MyCurrency cy2 = new MyCurrency();
-		cy2.setId(2);
 		cy2.setCode("GBP");
 		cy2.setChn_name("英鎊");
 		MyCurrency cy3 = new MyCurrency();
-		cy3.setId(3);
 		cy3.setCode("USD");
 		cy3.setChn_name("美元");
 		
 		cyRepo.save(cy1);
 		cyRepo.save(cy2);
 		cyRepo.save(cy3);
+		cyNameMap.put(cy1.getCode(), cy1.getChn_name());
+		cyNameMap.put(cy2.getCode(), cy2.getChn_name());
+		cyNameMap.put(cy3.getCode(), cy3.getChn_name());
 	}
 	
 	protected void printCyMapping() {
